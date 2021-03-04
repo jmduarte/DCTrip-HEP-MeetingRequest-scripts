@@ -1,0 +1,29 @@
+This package has been produced by Rob Fine (finer@pas.rochester.edu). Feel to reach out with any questions, comments, or concerns.
+
+IMPORTANT: Make sure that you review the content of the letters generated using this package to double-check that you've customized the text appropriately to yourself!! The only files that you need to edit are `Header.tex` and `generateMeetingRequestLetters.py`
+--FAQ--
+-line 72 of Header.tex (\hspace{3.8in}) is what you need to modify to horizontally shift your name in the upper-right corner of the generated letter. You probably want it shifted so that it lines up nicely with the address below the bold line, as in the examples included in this package.
+
+This directory contains:
+
+Header.tex
+----------
+This file contains the text and methods that will be common to all meeting request letters. You'll have to modify the contents to reflect your personal details (name, address, etc.)
+
+UEC_logo.pdf
+----------
+This is the image file for the UEC logo. You'll need to swap this out with the log of your institution if you're not affiliated with the Fermilab UEC
+
+generateMeetingRequestLetters.py
+----------
+This is a python script that will generate all of the .tex files that you can compile into your meeting request letters (in PDF format, ultimately). You'll need to modify this to reflect the list of offices you need to generate letters for. Note that there is a field within the loop over offices that allow you to (slightly) customize the content of the letter to reflect your connection to each district
+
+Raskin_HEP_Meeting_Request_Letter_March2019.{tex,pdf}
+----------
+Example of the .tex and .pdf for a meeting request letter which does not go into detail about my connection with that district.
+
+Gibbs_HEP_Meeting_Request_Letter_March2019.{tex,pdf}
+----------
+Example of the .tex and .pdf for a meeting request letter which does go into detail about my connection with that district.
+
+NOTE: I have not included signature.png, which Header.tex expects to live in this directory. I encourage you to upload your ownload signature image file, or else to modify Header.tex to not expect a signature image.
