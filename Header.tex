@@ -5,30 +5,25 @@
 \usepackage{microtype}
 \usepackage{gfsdidot} %This package screws up accenting. There is a work-around using XeTeX to compile. See http://tex.stackexchange.com/questions/274981/gfs-didot-accented-letters-not-working-in-latex
 \usepackage{eso-pic}
-
+\usepackage{palatino}
 %----------------------------------------------------------------------------------------
 %	COMMON TEXT BLOCKS
 %----------------------------------------------------------------------------------------
 
-\newcommand{\blockA}[1]{I am writing to request a meeting with you or a member of your science staff on Tuesday, March 19, Wednesday, March 20, or Thursday, March 21. I am a visiting researcher at Fermi National Accelerator Laboratory (Fermilab) -- our nation's premier particle physics research facility -- located outside Chicago in Batavia, Illinois#1. I am currently pursuing my Ph.D. at the University of Rochester, working on an experiment hosted here at Fermilab, and I am a delegate of the Fermilab Users Executive Committee, which represents thousands of students and researchers from the United States and around the world collaborating at Fermilab.}
+\newcommand{\blockA}[1]{I am writing to request a virtual meeting with you or a member of your science staff on one of March 8, 9, 10, 17, 18 or 19, if possible.
+I am currently an Assistant Professor of Physics conducting high energy physics research and teaching at the University of California San Diego (UCSD), located in La Jolla, California, and I am a delegate of the U.S. Large Hadron Collider (LHC) Users Association.
+#1}
 
-\newcommand{\blockB}{Each year a delegation from Fermilab, together with representatives of the Stanford Linear Accelerator Center in California and the U.S.-based users of the Large Hadron Collider in Europe, visits Washington, D.C. on behalf of the U.S. high energy physics community. Together, we represent more than 6,000 physicists and students, from 160 universities and from the Department of Energy national laboratories.  Our purpose is to meet with members of Congress and their staff to discuss the importance of continuing federal investment in the physical sciences in general, and in high energy physics in particular. We also hope to share our enthusiasm for cutting--edge scientific and technological research at a time when basic research is of critical importance to our nation's long-term competitiveness. Our group includes a number of younger scientists, including graduate students, like myself, and postdoctoral researchers, who represent our country's future in scientific innovation. We feel it is especially important for these voices to be heard in Washington.  
+\newcommand{\blockB}{Each year a delegation from the Fermi National Accelerator Laboratory (Fermilab) in Illinois, together with representatives of the SLAC National Acceleratory Laboratory in California and the U.S.-based users of the LHC in Europe, visits Washington, D.C. on behalf of the U.S. high energy physics community.
+Together, we represent more than 6,000 physicists and students, from 160 universities and from the Department of Energy national laboratories.
+Our purpose is to meet with members of Congress and their staff to discuss the importance of continuing federal investment in the physical sciences in general, and in high energy physics in particular.
+We also hope to share our enthusiasm for cutting-edge scientific and technological research at a time when basic research is of critical importance to our nation's long-term competitiveness.
+Our group includes a number of early-career scientists, including graduate students, postdoctoral researchers, and junior faculty who represent our country's future in scientific innovation.
+We feel it is especially important for these voices to be heard in Washington.
 
-Thank you for considering my request for a meeting. Your office may reach me on my mobile phone at \TEL, or by email at \textit{\Email}.  I look forward to meeting with you soon.}
+Thank you for considering my request for a meeting. Your office may reach me on my mobile phone at \TEL, or by email at \textit{\Email}.
+I look forward to meeting with you soon.}
 
-\newcommand{\signoff}[1]{
-	\closing{Sincerely,}
-	
-	\AddToShipoutPicture*{
-		\put(290,-#1){
-			\parbox[b][\paperheight]{\paperwidth}{%
-				\vfill
-				\includegraphics[width=2in,keepaspectratio]{../../2019-HEP-MeetingRequest-scripts/signature.png}
-				\vfill
-			}
-		}
-	}
-}
 
 %----------------------------------------------------------------------------------------
 
@@ -52,28 +47,32 @@ Thank you for considering my request for a meeting. Your office may reach me on 
 %	SENDER INFORMATION
 %----------------------------------------------------------------------------------------
 
-%\name{Rob Fine}
-%\def\Who{Rob Fine}
-\name{John Default}
-\def\Who{John Default}
-%\def\What{, PhD} % Your title
-\def\Where{Fermi National Accelerator Laboratory}
-\def\Address{P.O. Box 500 - MS 220}
-\def\CityZip{Batavia IL 60510}
-%\def\Email{rfine4@gmail.com}
-%\def\TEL{(914) 886-2385}
-\def\Email{jdefault@gmail.com}
-\def\TEL{(XXX) XXX-XXXX}
+
+%\name{Javier Duarte, Ph.D.}
+\def\Who{Javier Duarte, Ph.D.}
+\def\What{Assistant Professor of Physics} % Your title
+\def\Where{University of California San Diego}
+\def\Address{9500 Gilman Drive}
+\def\CityZip{La Jolla, CA 92093}
+\def\Email{javier.m.g.duarte@gmail.com}
+\def\TEL{(646) 287-5051}
+
+\newcommand{\signoff}{
+\closing{Sincerely,\\\vspace{0.25in}
+\fromsig{\includegraphics[scale=1]{../../signature.pdf}}\\
+\fromname{\Who}
+}
+}
 
 %----------------------------------------------------------------------------------------
 %	HEADER AND FROM ADDRESS STRUCTURE
 %----------------------------------------------------------------------------------------
 
 \address{
-	\includegraphics[width=2.5in]{../../2019-HEP-MeetingRequest-scripts/UEC_logo}
-	\hspace{4.1in} 
+	\includegraphics[width=2.0in]{../../USLHC_logo_2017.jpg}
+	\hspace{4.1in}
 	\vskip -0.8in
-	\hspace{3.8in}
+	\hspace{5.15in}
 	\makebox[0ex][r]
 	{\bf \Who }
 	~\\[-0.11in]
@@ -82,8 +81,9 @@ Thank you for considering my request for a meeting. Your office may reach me on 
 	\hspace{\fill}
 	\parbox[t]{3.4in}{
 		\footnotesize
-		%\Who 
+		%\Who
 		{\em
+		\What\\
 		\Where\\
 		\Address\\
 		\CityZip\\
@@ -108,23 +108,22 @@ Thank you for considering my request for a meeting. Your office may reach me on 
 \def\opening#1{
 
 	\thispagestyle{empty}{
-	
+
 		\centering
-		\fromaddress 
-		\vspace{0.6in}\\ 
+		\fromaddress
+		\vspace{0.6in}\\
 
 	}{
-	
+
 		\raggedright
-		\toname \\ 
-		\toaddress 
-	
+		\toname \\
+		\toaddress
+
 	}
-	
+
 	\vspace{0.2in}
 	\noindent #1
 
 }
 
 %----------------------------------------------------------------------------------------
-
